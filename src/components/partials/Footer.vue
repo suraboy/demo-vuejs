@@ -13,3 +13,12 @@
     <!-- Footer -->
   </div>
 </template>
+
+<style>
+  .page-footer{
+    background: aliceblue;
+  }
+  #app{
+    margin-top:0px!important;
+  }
+</style>

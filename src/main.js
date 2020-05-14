@@ -11,6 +11,8 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { faJs, faVuejs } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+Vue.prototype.$http = axios
+
 library.add(faCoffee, faJs, faVuejs)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
