@@ -11,7 +11,7 @@
             value
           </b-card-text>
           <b-card-text v-if="output != ''">
-            <span v-for="(value,index) in output.response"> {{ index }} = <b>{{ value }}</b> </span>
+            <span v-for="(value,index) in output.response" :key="value"> {{ index }} = <b>{{ value }}</b> </span>
           </b-card-text>
         </b-tab>
         <b-tab title="Question3" v-on:click="findABC">
@@ -19,16 +19,16 @@
             B and C value
           </b-card-text>
           <b-card-text v-if="output != ''">
-            <span v-for="(value,index) in output.response"> {{ index }} = <b>{{ value }}</b>  </span>
+            <span v-for="(value,index) in output.response" :key="value"> {{ index }} = <b>{{ value }}</b>  </span>
           </b-card-text>
         </b-tab>
-        <b-tab title="Question3" v-on:click="findBestWay">
+        <b-tab title="Question4" v-on:click="findBestWay">
           <b-card-text v-if="output != ''">Please use “Google API” for finding the best way to go to Central World from SCG Bangsue
           </b-card-text>
           <b-card-text v-if="output != ''">
-            <span v-for="value in output.routes">
+            <span v-for="value in output.routes" :key="value.summary">
               เส้นทาง : <b>{{ value.summary }}</b>
-                <span v-for="leg in value.legs">
+                <span v-for="leg in value.legs" :key="leg">
                   ( Distance : <b>{{ leg.distance.text }}</b>
                   Duration : <b>{{ leg.duration.text }}</b>) <br>
                   Start Address : <b>{{ leg.start_address }}</b> <br>
@@ -40,7 +40,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="(step,key) in leg.steps">
+                      <tr v-for="step in leg.steps" :key="step">
                         <td><p v-html="step.html_instructions"></p></td>
                       </tr>
                     </tbody>
@@ -64,7 +64,7 @@
     }
   },
   methods: {
-    callDoScg(e) {
+    callDoScg () {
       let currentObj = this
       this.axios.get('http://localhost:6319/v1/doscg')
         .then(function (response) {
@@ -74,7 +74,7 @@
           currentObj.output = error
         })
     },
-    findXYZ (e) {
+    findXYZ () {
       let currentObj = this
       this.axios.get('http://localhost:6319/v1/doscg/xyz')
         .then(function (response) {
@@ -84,7 +84,7 @@
           currentObj.output = error
         })
     },
-    findABC (e) {
+    findABC () {
       let currentObj = this
       this.axios.get('http://localhost:6319/v1/doscg/abc')
         .then(function (response) {
@@ -94,7 +94,7 @@
           currentObj.output = error
         })
     },
-    findBestWay (e) {
+    findBestWay () {
       let currentObj = this
       this.axios.get('http://localhost:6319/v1/doscg/map')
         .then(function (response) {
