@@ -10,8 +10,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { faJs, faVuejs } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueAxios from 'vue-axios'
+import axios from 'axios'
 
-Vue.prototype.$http = axios
+Vue.use(VueAxios, axios)
 
 library.add(faCoffee, faJs, faVuejs)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

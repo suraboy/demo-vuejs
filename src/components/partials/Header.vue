@@ -7,9 +7,6 @@
       </button>
       <div class="collapse navbar-collapse text-center" id="navbarsExample11">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link to="/" class="nav-link">Home</router-link>
-          </li>
           <li class="nav-item">
             <router-link to="/myapi" class="nav-link">My API</router-link>
           </li>
