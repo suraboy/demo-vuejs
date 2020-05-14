@@ -1,5 +1,9 @@
 <template>
   <div class="cv-page">
-    <h2>Hello</h2>
+    <pdf src="./static/resume.pdf"></pdf>
   </div>
 </template>
+
+<script>import pdf from 'vue-pdf'
+export default {components: {pdf}}
+</script>
