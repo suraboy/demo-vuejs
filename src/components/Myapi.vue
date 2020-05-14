@@ -49,6 +49,9 @@
             </span>
           </b-card-text>
         </b-tab>
+        <b-tab title="Question5">
+          <img src="/static/369wedjm.png">
+        </b-tab>
       </b-tabs>
     </b-card>
   </div>
@@ -119,7 +122,7 @@
       margin-top: 20px;
     }
     .card-header{
-      padding-left:35%;
+      padding-left:32%;
     }
   }
 </style>
