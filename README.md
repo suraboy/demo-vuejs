@@ -1,7 +1,6 @@
 # do-scg-vuejs
 
 > A Vue.js project
-> This is Front End.
 > Back-end : https://github.com/suraboy/do-scg-expressjs
 
 ## Build Setup
